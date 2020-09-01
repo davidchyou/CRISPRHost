@@ -121,7 +121,7 @@ mkdir($outpath);
 
 if ((length($fasta_path)) > 0 && (-e $fasta_path)) {
 	system("cp $fasta_path $outpath/input_spacers.fa");
-	my $cmd_fadb = "makeblastdb -in $outpath/input_spacers.fa -out $outpath/input_spacers.fa -dbtype nucl -parse_seqids";
+	my $cmd_fadb = "$cd_path/makeblastdb -in $outpath/input_spacers.fa -out $outpath/input_spacers.fa -dbtype nucl -parse_seqids";
 	$flag = system($cmd_fadb);
 	$dbpath = "$outpath/input_spacers.fa";
 }
@@ -142,7 +142,7 @@ while (my $seq = $in->next_seq()) {
 close(FNA);
 
 my $minced_path=`which minced >&1 2>&1`; chomp $minced_path; $minced_path=~s/\r//g;
-if(not defined $minced_path or $minced_path eq "" or $minced_path=~/:/) {
+if(not defined $minced_path or $minced_path eq "" or $minced_path=~/:/ or (! (-e "$cd_path/minced"))) {
 	if ($mask_arrays > 0) {
 		print "CRISPR-array predictor \'minced\' not found, skip the array-masking step.\n";
 	}
@@ -150,17 +150,17 @@ if(not defined $minced_path or $minced_path eq "" or $minced_path=~/:/) {
 }
 
 if ($mask_arrays > 0) {
-	my $flag = system("minced -gff $path_2 $path_mask >&1 2>&1");
-	$flag = system("bedtools maskfasta -fi $path_2 -bed $path_mask -fo $path_3 >&1 2>&1");
+	my $flag = system("$cd_path/minced -gff $path_2 $path_mask >&1 2>&1");
+	$flag = system("$cd_path/bedtools maskfasta -fi $path_2 -bed $path_mask -fo $path_3 >&1 2>&1");
 }
-my $flag = system("makeblastdb -in $path_2 -out $path_2 -dbtype nucl -parse_seqids");
+my $flag = system("$cd_path/makeblastdb -in $path_2 -out $path_2 -dbtype nucl -parse_seqids");
 
 my $qfile = $path_2;
 if (($mask_arrays > 0) && (-e $path_3)) {
 	$qfile = $path_3;
 }
 
-$flag = system("blastn -query $qfile -db $dbpath -word_size 7 -out $outpath/out.txt -gapopen 10 -max_target_seqs $max_target_seqs " . 
+$flag = system("$cd_path/blastn -query $qfile -db $dbpath -word_size 7 -out $outpath/out.txt -gapopen 10 -max_target_seqs $max_target_seqs " . 
 		       "-gapextend 2 -penalty -1 -reward 1 -task blastn-short -lcase_masking -outfmt " .
 		       "\'6 qaccver saccver pident length mismatch gapopen qstart qend sstart send evalue bitscore qseq sseq nident slen qlen sstrand\' " .
 		       "-dbsize $dbsize -evalue $e_cutoff -num_threads 24 >/dev/null 2>&1");

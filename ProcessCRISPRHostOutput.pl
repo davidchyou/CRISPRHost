@@ -1,3 +1,9 @@
+use Cwd 'getcwd';
+use Cwd 'abs_path';
+
+my $cd_path = abs_path($0); 
+$cd_path = get_path($cd_path);
+
 my $file_in = @ARGV[0];
 my $file_out = @ARGV[1];
 my $db = @ARGV[2];
@@ -245,7 +251,7 @@ sub extract_seq {
 	
 	my $range = $x . "-" . $y;
 	
-	my $cmd_bdb = "blastdbcmd -db $db_path -entry \'$contig\' -range $range";
+	my $cmd_bdb = "$cd_path/blastdbcmd -db $db_path -entry \'$contig\' -range $range";
 	
 	my @rs = `$cmd_bdb`;
 	
@@ -325,4 +331,13 @@ sub organism_short_name {
 		$organism .= "_" . "@gtoks_2[2]";
 	}
 	return $organism;
+}
+
+sub get_path() {
+	my $dir=shift(@_);
+	my @arr_p1=split('\/',$cd_path);
+	pop(@arr_p1);
+	$dir=join("\/",@arr_p1);
+		
+	return $dir;
 }

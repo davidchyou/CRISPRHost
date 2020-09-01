@@ -57,9 +57,9 @@ c_arrays.gff                 Any CRISPR arrays found by MINCED and masked by BED
 
 DEPENDENCIES
 
-1. NCBI BLAST suite: blastn, makeblastdb and blastdbcmd
-2. Bedtools
-3. minced
+1. NCBI BLAST suite: blastn, makeblastdb and blastdbcmd (provided)
+2. Bedtools (provided)
+3. minced (provided)
 4. Perl library BioPerl
 5. R 3.6+ (no add-on libraries needed) and Rscript
 
