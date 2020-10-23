@@ -2,8 +2,8 @@ CRISPRHost.pl
 
 GENERAL USAGE
 
-perl CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
-perl /path/CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
+	perl CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
+	perl /path/CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
 
 OPTIONS
 
@@ -12,8 +12,8 @@ OPTIONS
 	-kingdom <A|B|AB>            Select a kingdom (A=archaea, B=bacteria, AB=archaea+bacteria). 
 	                             The corresponding BLASTDB of CRISPR spacers (non-redundant) will then be used:
   	                                1. A: RefSeq95 archaeal, DB/CRISPRBankSpacers_4_95_2555_100_archaea_refseq_nr.fa
-    	                             2. B: RefSeq95 bacterial, DB/CRISPRBankSpacers_4_95_2555_100_bacteria_refseq_nr.fa
-      	                             3. AB: RedSeq95 archaeal+bacterial, DB/CRISPRBankSpacers_4_95_2555_100_all_refseq_nr.fa
+    	                        2. B: RefSeq95 bacterial, DB/CRISPRBankSpacers_4_95_2555_100_bacteria_refseq_nr.fa
+      	                        3. AB: RedSeq95 archaeal+bacterial, DB/CRISPRBankSpacers_4_95_2555_100_all_refseq_nr.fa
   	                             During the first run, the app will unzip "DB.zip" for the DB directory.
   	                             Default: AB.
 	-mask_arrays                 Optionally run MINCED to predict predict arrays and mask them using BEDTOOLS.
@@ -49,7 +49,7 @@ OUTPUT FILES
                                                                of the spacer (minus) or not (plus). 
                                                      
 	full_results.csv             Files showing the key results in summary.csv, with additional information and statistics
-                                     included.
+                                 included.
                              
 	spacer_matched.fna           A list of spacers matched in multi-FASTA format.
 
@@ -65,6 +65,6 @@ DEPENDENCIES
 
 EXAMPLES
 
-perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623
-perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB
-perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB -mask_arrays
+	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623
+	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB
+	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB -mask_arrays
