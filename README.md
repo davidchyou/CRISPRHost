@@ -4,7 +4,7 @@ This application takes a partial prokaryotic virus sequence and predicts the hos
 
 General usage
 -------------
-As a minimum, nucleic-acid sequences need to be provided as a FASTA or a multi-FASTA formatted file, along with the path to the output directory. Additional options (next section) can also be specified.
+As a minimum, nucleic-acid sequences need to be provided as a FASTA or a multi-FASTA formatted file, along with the path to the output directory. Additional options (next section) can also be specified. CRISPRHost can be called outside the source directory.
 
 	perl CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
 	perl /path/CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
