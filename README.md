@@ -11,7 +11,7 @@ As a minimum, nucleic-acid sequences need to be provided as a FASTA or a multi-F
 
 Options
 -------
-A full list of command-line options are displayed below. 
+The full list of command-line options is displayed below. 
 
 	-in <path>                   [Required] A FASTA file of viral genome, mobile genetic elements, or sequences.
 	-out <path>                  [Required] Path to the output directory.
