@@ -12,10 +12,10 @@ OPTIONS
 	-kingdom <A|B|AB>            Select a kingdom (A=archaea, B=bacteria, AB=archaea+bacteria). 
 	                             The corresponding BLASTDB of CRISPR spacers (non-redundant) will then be used:
   	                                1. A: RefSeq95 archaeal, DB/CRISPRBankSpacers_4_95_2555_100_archaea_refseq_nr.fa
-    	                              2. B: RefSeq95 bacterial, DB/CRISPRBankSpacers_4_95_2555_100_bacteria_refseq_nr.fa
-      	                            3. AB: RedSeq95 archaeal+bacterial, DB/CRISPRBankSpacers_4_95_2555_100_all_refseq_nr.fa
-  	                            During the first run, the app will unzip "DB.zip" for the DB directory.
-  	                            Default: AB.
+    	                                2. B: RefSeq95 bacterial, DB/CRISPRBankSpacers_4_95_2555_100_bacteria_refseq_nr.fa
+      	                                3. AB: RedSeq95 archaeal+bacterial, DB/CRISPRBankSpacers_4_95_2555_100_all_refseq_nr.fa
+  	                             During the first run, the app will unzip "DB.zip" for the DB directory.
+  	                             Default: AB.
 	-mask_arrays                 Optionally run MINCED to predict predict arrays and mask them using BEDTOOLS.
 	-dbsize <integer>            Number of nucleotides in BLASTDB, optional parameter for BLASTN. Default: 10000.
 	-e_cutoff <numerical>        E-value cutoff for BLASTN spacer hits. Default: 0.001.
@@ -30,26 +30,26 @@ OUTPUT FILES
 
 	summary.csv                Files showing the key results. The columns are:
 
-                             1. Spacer hit statistics
+                                   1. Spacer hit statistics
                              
-                                VIRAL_GENOME                Viral genome identifier.
-                                N_HOST_SPACER               Number of hits from spacers of the same sequence.
-                                E_VALUE                     BLASTN e-value.
-                                BITSCORE                    BLASTN bitscore.
-                                PROP_NT_MATCHED_IN_HYBRID   Proportion of matched nucleotide in a spacer-target hybrid.
+                                   VIRAL_GENOME                Viral genome identifier.
+                                   N_HOST_SPACER               Number of hits from spacers of the same sequence.
+                                   E_VALUE                     BLASTN e-value.
+                                   BITSCORE                    BLASTN bitscore.
+                                   PROP_NT_MATCHED_IN_HYBRID   Proportion of matched nucleotide in a spacer-target hybrid.
                                 
-                             2. Attributes of matched spacers
+                                   2. Attributes of matched spacers
                              
-                                SPACER_ID                   Spacer identifier.
-                                KNOWN_SPECIES               A list of species where the same spacer can be found. 
-                                                            These species are the predicted hosts.
-                                TARGET_ALIGN_START          Start-coordinate of the target alignment.
-                                SEQ_TARGET_ALIGNED          Sequence of the spacer target.
-                                SPACER_ORI_ALIGN            Whether the match is corresponding to the reverse-complement 
-                                                            of the spacer (minus) or not (plus). 
+                                   SPACER_ID                   Spacer identifier.
+                                   KNOWN_SPECIES               A list of species where the same spacer can be found. 
+                                                               These species are the predicted hosts.
+                                   TARGET_ALIGN_START          Start-coordinate of the target alignment.
+                                   SEQ_TARGET_ALIGNED          Sequence of the spacer target.
+                                   SPACER_ORI_ALIGN            Whether the match is corresponding to the reverse-complement 
+                                                               of the spacer (minus) or not (plus). 
                                                      
 	full_results.csv             Files showing the key results in summary.csv, with additional information and statistics
-                              included.
+                                     included.
                              
 	spacer_matched.fna           A list of spacers matched in multi-FASTA format.
 
