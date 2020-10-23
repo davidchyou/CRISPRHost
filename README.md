@@ -4,11 +4,15 @@ This application takes a partial prokaryotic virus sequence and predicts the hos
 
 General usage
 -------------
+As a minimum, nucleic-acid sequences need to be provided as a FASTA or a multi-FASTA formatted file, along with the path to the output directory. Additional options (next section) can also be specified.
+
 	perl CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
 	perl /path/CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
 
 Options
 -------
+A full list of command-line options are displayed below. 
+
 	-in <path>                   [Required] A FASTA file of viral genome, mobile genetic elements, or sequences.
 	-out <path>                  [Required] Path to the output directory.
 	-kingdom <A|B|AB>            Select a kingdom (A=archaea, B=bacteria, AB=archaea+bacteria). 
@@ -30,6 +34,8 @@ Options
 
 Output files
 ------------
+The following output files are generated.
+
 	summary.csv                Files showing the key results. The columns are:
 
                                    1. Spacer hit statistics
@@ -59,6 +65,8 @@ Output files
 
 DEPENDENCIES
 ------------
+CRISPRHost requires the following dependencies. The executables of applications are provided, but BioPerl and Rscript will need to be installed separately.
+
 1. NCBI BLAST suite: blastn, makeblastdb and blastdbcmd (provided)
 2. Bedtools (provided)
 3. minced (provided)
@@ -67,6 +75,8 @@ DEPENDENCIES
 
 Examples
 --------
+Example commands:
+
 	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623
 	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB
 	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB -mask_arrays
