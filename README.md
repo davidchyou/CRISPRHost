@@ -1,6 +1,14 @@
 CRISPRHost help
 ---------------
-This application takes a partial prokaryotic virus sequence and predicts the host. It utilizes the fact that foreign DNA molecules such as phage genomes, plasmid and mobile genetic elements, can be included as spacers in CRISPR arrays in bacteria and archaea. Therefore, spacers in CRISPR-arrays provide an indication of what hosts have defended against the virus, or a similar virus. FASTA-formatted BLAST databases of CRISPR spacers from bacteria and archaea (predicted by CRISPRDetect) were built. In the database, each spacer sequence was linked to the genomic and taxonomic information of source organisms in the headers. When DNA sequences are provided as queries by the user, BLASTN will be used to find any spacer targets in each sequence, and the genomic and taxonomical information of their owners can be obtained.
+This application takes a partial prokaryotic virus sequence and predicts the host. It utilizes the fact that foreign DNA molecules such as phage genomes, plasmid and mobile genetic elements, can be included as spacers in CRISPR arrays in bacteria and archaea. Therefore, spacers in CRISPR-arrays provide an indication of what hosts have defended against the virus, or a similar virus. FASTA-formatted BLAST databases of CRISPR spacers from bacteria and archaea (predicted by [CRISPRDetect 2.4](http://crispr.otago.ac.nz/CRISPRDetect/predict_crispr_array.html)) were built. In the database, each spacer sequence was linked to the genomic and taxonomic information of source organisms in the headers. When DNA sequences are provided as queries by the user, BLASTN will be used to find any spacer targets in each sequence, and the genomic and taxonomical information of their owners can be obtained.
+
+Validation data, and R scripts used for PPV calculations are here: https://github.com/davidchyou/CRISPRHost_data_analysis
+
+A web version is available through a Galaxy interface here: http://crispr.otago.ac.nz:8080 (under "Virus: Classification")
+
+The source directory was first uploaded to GitHub in 2018, and was presented by Chris Brown at CRISPR2019, Molecular Biology of Archaea 2019, and Asian Transcription Conference 2019.
+ 
+A manuscript is in preparation. (Chyou, Biswas, Fineran, Brown)
 
 General usage
 -------------
