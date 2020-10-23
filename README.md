@@ -63,9 +63,9 @@ The following output files are generated.
 
 	c_arrays.gff                 Any CRISPR arrays found by MINCED and masked by BEDTOOLS, if -mask_arrays is used                         
 
-DEPENDENCIES
+Dependencies
 ------------
-CRISPRHost requires the following dependencies. The executables of applications are provided, but BioPerl and Rscript will need to be installed separately.
+CRISPRHost requires the following dependencies. The executables of applications are provided, but BioPerl, R and Rscript will need to be installed separately.
 
 1. NCBI BLAST suite: blastn, makeblastdb and blastdbcmd (provided)
 2. Bedtools (provided)
