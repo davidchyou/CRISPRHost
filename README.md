@@ -4,12 +4,10 @@ This application takes a partial prokaryotic virus sequence and predicts the hos
 
 Validation data, and R scripts used for PPV calculations and testing statistics are in this GitHub repo: http://github.com/davidchyou/CRISPRHost_data_analysis. By considering spacer matches with an e-value no higher than 1e-8 and at least 95% of all nucleotides in spacer-target hybrids to be matched, the PPV calculations are the following.
 
-
 |          | PPV-Order | PPV-Family | PPV-Genus  |
 | -------- | --------- | ---------- | ---------- |
 | Bacteria | 0.97      | 0.96       | 0.92       |
 | Archaea  | 0.98      | 0.98       | 0.7        |
-
 
 A web version is available through a Galaxy interface here: http://crispr.otago.ac.nz:8080 (under "Virus: Classification").
 
