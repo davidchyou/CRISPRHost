@@ -12,8 +12,8 @@ OPTIONS
 	-kingdom <A|B|AB>            Select a kingdom (A=archaea, B=bacteria, AB=archaea+bacteria). 
 	                             The corresponding BLASTDB of CRISPR spacers (non-redundant) will then be used:
   	                                1. A: RefSeq95 archaeal, DB/CRISPRBankSpacers_4_95_2555_100_archaea_refseq_nr.fa
-    	                                2. B: RefSeq95 bacterial, DB/CRISPRBankSpacers_4_95_2555_100_bacteria_refseq_nr.fa
-      	                                3. AB: RedSeq95 archaeal+bacterial, DB/CRISPRBankSpacers_4_95_2555_100_all_refseq_nr.fa
+    	                             2. B: RefSeq95 bacterial, DB/CRISPRBankSpacers_4_95_2555_100_bacteria_refseq_nr.fa
+      	                             3. AB: RedSeq95 archaeal+bacterial, DB/CRISPRBankSpacers_4_95_2555_100_all_refseq_nr.fa
   	                             During the first run, the app will unzip "DB.zip" for the DB directory.
   	                             Default: AB.
 	-mask_arrays                 Optionally run MINCED to predict predict arrays and mask them using BEDTOOLS.
