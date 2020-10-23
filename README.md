@@ -1,12 +1,13 @@
-CRISPRHost.pl
+CRISPRHost help
+---------------
 
-GENERAL USAGE
-
+General usage
+-------------
 	perl CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
 	perl /path/CRISPRHost.pl -in <fasta_path> -out <dir_path> <options>
 
-OPTIONS
-
+Options
+-------
 	-in <path>                   [Required] A FASTA file of viral genome, mobile genetic elements, or sequences.
 	-out <path>                  [Required] Path to the output directory.
 	-kingdom <A|B|AB>            Select a kingdom (A=archaea, B=bacteria, AB=archaea+bacteria). 
@@ -26,8 +27,8 @@ OPTIONS
 	-h                           Show this help.
 	-help                        Show this help (same as -h).      
 
-OUTPUT FILES
-
+Output files
+------------
 	summary.csv                Files showing the key results. The columns are:
 
                                    1. Spacer hit statistics
@@ -56,15 +57,15 @@ OUTPUT FILES
 	c_arrays.gff                 Any CRISPR arrays found by MINCED and masked by BEDTOOLS, if -mask_arrays is used                         
 
 DEPENDENCIES
-
+------------
 1. NCBI BLAST suite: blastn, makeblastdb and blastdbcmd (provided)
 2. Bedtools (provided)
 3. minced (provided)
 4. Perl library BioPerl
 5. R 3.6+ (no add-on libraries needed) and Rscript
 
-EXAMPLES
-
+Examples
+--------
 	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623
 	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB
 	perl CRISPRHost.pl -in NC_034623.fna -out test_NC_034623 -kingdom AB -mask_arrays
